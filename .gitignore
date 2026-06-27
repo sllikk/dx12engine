@@ -67,3 +67,33 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+## User-specific files and local settings
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+
+## Build outputs and compiled binaries
+[Bb]in/
+[Oo]bj/
+*.exe
+*.dll
+*.pdb
+
+## Roslyn compiler caches and logs
+*.roslyncahex*
+*.log
+
+## Test results and code coverage
+TestResults/
+*.trx
+*.coverage
+
+## Package manager directories
+packages/
+.nuget/
+
+## Visual Studio Code settings (Optional)
+.vscode/
