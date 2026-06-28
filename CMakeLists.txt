@@ -31,12 +31,19 @@ FetchContent_Declare(
 	GIT_TAG		   v1.619.1 		
 )
 
+FetchContent_Declare(
+	EASTL
+	GIT_REPOSITORY https://github.com/electronicarts/EASTL.git
+	GIT_TAG		   3.27.01 		
+)
 
-FetchContent_MakeAvailable(fmt DirectXMath DirectXTK12 DirectX-Headers)
+
+FetchContent_MakeAvailable(fmt DirectXMath DirectXTK12 DirectX-Headers EASTL)
  
-add_executable(Engine WIN32 "src/Engine.h" "src/Engine.cpp")
+add_executable(Engine WIN32 "src/Engine.h" "src/Engine.cpp" "src/utils.hpp" "src/eastl_mem.cpp")
 target_link_libraries(Engine PUBLIC d3d12 dxcompiler dxgi dxguid)
 
 target_link_libraries(Engine PUBLIC fmt::fmt)
 target_link_libraries(Engine PUBLIC DirectXMath)
 target_link_libraries(Engine PUBLIC DirectXTK12)
+target_link_libraries(Engine PUBLIC EASTL)
