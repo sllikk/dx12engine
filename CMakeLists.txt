@@ -22,13 +22,13 @@ FetchContent_Declare(
 FetchContent_Declare(
 	DirectXTK12
 	GIT_REPOSITORY https://github.com/microsoft/DirectXTK12.git
-	GIT_TAG		   may2026 		
+	GIT_TAG		   oct2025 		
 )
 
 FetchContent_Declare(
 	DirectX-Headers
 	GIT_REPOSITORY https://github.com/microsoft/DirectX-Headers.git
-	GIT_TAG		   v1.619.1 		
+	GIT_TAG		   v1.616.0		
 )
 
 FetchContent_Declare(
@@ -39,11 +39,22 @@ FetchContent_Declare(
 
 
 FetchContent_MakeAvailable(fmt DirectXMath DirectXTK12 DirectX-Headers EASTL)
- 
-add_executable(Engine WIN32 "src/Engine.h" "src/Engine.cpp" "src/utils.hpp" "src/eastl_mem.cpp")
-target_link_libraries(Engine PUBLIC d3d12 dxcompiler dxgi dxguid)
 
+set(PROJECT_SRC_FILES 
+"src/engine.h" 
+"src/engine.cpp" 
+"src/utils.hpp" 
+"src/timer.h" 
+"src/render_utils.hpp" 
+"src/eastl_mem.cpp" 
+"src/dx12render.h"  "src/timer.cpp"
+"src/dx12render.cpp")
+ 
+add_executable(Engine WIN32 ${PROJECT_SRC_FILES})
+
+target_link_libraries(Engine PUBLIC d3d12 dxcompiler d3dcompiler dxgi dxguid d3dcompiler)
 target_link_libraries(Engine PUBLIC fmt::fmt)
 target_link_libraries(Engine PUBLIC DirectXMath)
 target_link_libraries(Engine PUBLIC DirectXTK12)
 target_link_libraries(Engine PUBLIC EASTL)
+target_link_libraries(Engine PUBLIC DirectX-Headers)

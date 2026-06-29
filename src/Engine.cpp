@@ -1,5 +1,5 @@
 
-#include "Engine.h"
+#include "engine.h"
 
 
 struct Data {
@@ -29,4 +29,19 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
     while (true);
 
     return 0;
+}
+
+bool Engine::init()
+{
+    return false;
+}
+
+void Engine::run()
+{
+
+}
+
+void Engine::shutdown()
+{
+
 }
