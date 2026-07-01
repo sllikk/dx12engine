@@ -3,15 +3,13 @@
 
 
 class DX12Render : public Render {
-
-
+	
 public:
 
+	DX12Render();
 	DX12Render(const DX12Render& other) = delete;
 
-	
-
-
+	 
 	// Inherited via Render
 	void init() override;
 
@@ -20,5 +18,6 @@ public:
 	void render() override;
 
 	void shutdown() override;
+
 
 };

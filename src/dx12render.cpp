@@ -1,7 +1,14 @@
 #include "dx12render.h"
 
+
+DX12Render::DX12Render()
+{
+
+}
+
 void DX12Render::init()
 {
+	fmt::println("INIT");
 
 }
 

@@ -47,7 +47,7 @@ set(PROJECT_SRC_FILES
 "src/timer.h" 
 "src/render_utils.hpp" 
 "src/eastl_mem.cpp" 
-"src/dx12render.h"  "src/timer.cpp"
+"src/dx12render.h" "src/timer.cpp"
 "src/dx12render.cpp")
  
 add_executable(Engine WIN32 ${PROJECT_SRC_FILES})

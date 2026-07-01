@@ -55,8 +55,6 @@ public:
 	virtual void render() = 0;
 	virtual void shutdown() = 0;
 
-	Render(const Render& other) = delete;
-	Render& operator=(const Render& other) = delete;
 	virtual ~Render() = default;
 };
 
